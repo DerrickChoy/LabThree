@@ -12,4 +12,3 @@ Phonebook::~Phonebook()
 {
     delete ui;
 }
-

@@ -15,6 +15,8 @@ public:
     Phonebook(QWidget *parent = nullptr);
     ~Phonebook();
 
+private slots:
+
 private:
     Ui::Phonebook *ui;
 };
