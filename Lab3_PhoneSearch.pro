@@ -17,9 +17,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
+    myaddressbookmodel.cpp \
     phonebook.cpp
 
 HEADERS += \
+    myaddressbookmodel.h \
     phonebook.h
 
 FORMS += \
