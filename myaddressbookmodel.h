@@ -7,6 +7,9 @@ class MyAddressBookModel: public QAbstractTableModel
 {
 public:
     MyAddressBookModel(QObject *parent);
+    std::vector<QString> firstNames;
+    std::vector<QString> lastNames;
+    std::vector<QString> phoneNumbers;
 
     // QAbstractItemModel interface
 public:
@@ -15,6 +18,8 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
 
     void openFile(QString filePath);
+    QString getPhoneNumber(int index);
+
 };
 
 #endif // MYADDRESSBOOKMODEL_H

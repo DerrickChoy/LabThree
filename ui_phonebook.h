@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -29,6 +30,7 @@ public:
     QAction *actionExit;
     QWidget *centralwidget;
     QTableView *tableView;
+    QLabel *displayLabel;
     QMenuBar *menubar;
     QMenu *menuTools;
     QStatusBar *statusbar;
@@ -51,6 +53,9 @@ public:
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         tableView->horizontalHeader()->setVisible(false);
         tableView->verticalHeader()->setVisible(false);
+        displayLabel = new QLabel(centralwidget);
+        displayLabel->setObjectName(QString::fromUtf8("displayLabel"));
+        displayLabel->setGeometry(QRect(40, 30, 241, 61));
         Phonebook->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Phonebook);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -77,6 +82,7 @@ public:
         Phonebook->setWindowTitle(QApplication::translate("Phonebook", "Phonebook", nullptr));
         actionAdd_an_Address_Book->setText(QApplication::translate("Phonebook", "Add an Address Book...", nullptr));
         actionExit->setText(QApplication::translate("Phonebook", "Exit", nullptr));
+        displayLabel->setText(QApplication::translate("Phonebook", "XXX-XXX-XXXX", nullptr));
         menuTools->setTitle(QApplication::translate("Phonebook", "Tools", nullptr));
     } // retranslateUi
 
