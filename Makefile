@@ -53,8 +53,10 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = main.cpp \
+		myaddressbookmodel.cpp \
 		phonebook.cpp moc_phonebook.cpp
 OBJECTS       = main.o \
+		myaddressbookmodel.o \
 		phonebook.o \
 		moc_phonebook.o
 DIST          = ../../Qt/5.12.6/clang_64/mkspecs/features/spec_pre.prf \
@@ -201,6 +203,7 @@ DIST          = ../../Qt/5.12.6/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Qt/5.12.6/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/mac/sdk.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/toolchain.prf \
@@ -228,7 +231,9 @@ DIST          = ../../Qt/5.12.6/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/exceptions.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/yacc.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/lex.prf \
-		Lab3_PhoneSearch.pro phonebook.h main.cpp \
+		Lab3_PhoneSearch.pro myaddressbookmodel.h \
+		phonebook.h main.cpp \
+		myaddressbookmodel.cpp \
 		phonebook.cpp
 QMAKE_TARGET  = Lab3_PhoneSearch
 DESTDIR       = 
@@ -396,6 +401,7 @@ Makefile: Lab3_PhoneSearch.pro ../../Qt/5.12.6/clang_64/mkspecs/macx-clang/qmake
 		../../Qt/5.12.6/clang_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Qt/5.12.6/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/mac/sdk.prf \
 		../../Qt/5.12.6/clang_64/mkspecs/features/toolchain.prf \
@@ -572,6 +578,7 @@ Makefile: Lab3_PhoneSearch.pro ../../Qt/5.12.6/clang_64/mkspecs/macx-clang/qmake
 ../../Qt/5.12.6/clang_64/mkspecs/features/qt_config.prf:
 ../../Qt/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../Qt/5.12.6/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../Qt/5.12.6/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../Qt/5.12.6/clang_64/mkspecs/features/mac/sdk.prf:
 ../../Qt/5.12.6/clang_64/mkspecs/features/toolchain.prf:
@@ -633,8 +640,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Qt/5.12.6/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents phonebook.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp phonebook.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents myaddressbookmodel.h phonebook.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp myaddressbookmodel.cpp phonebook.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents phonebook.ui $(DISTDIR)/
 
 
@@ -645,6 +652,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r Lab3_PhoneSearch.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -675,6 +683,9 @@ compiler_moc_header_clean:
 moc_phonebook.cpp: phonebook.h \
 		../../Qt/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		myaddressbookmodel.h \
+		../../Qt/5.12.6/clang_64/lib/QtCore.framework/Headers/QAbstractTableModel \
+		../../Qt/5.12.6/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h \
 		moc_predefs.h \
 		../../Qt/5.12.6/clang_64/bin/moc
 	/Users/nathanlee/Qt/5.12.6/clang_64/bin/moc $(DEFINES) --include /Users/nathanlee/QtProjects/LabThree/moc_predefs.h -I/Users/nathanlee/Qt/5.12.6/clang_64/mkspecs/macx-clang -I/Users/nathanlee/QtProjects/LabThree -I/Users/nathanlee/Qt/5.12.6/clang_64/lib/QtWidgets.framework/Headers -I/Users/nathanlee/Qt/5.12.6/clang_64/lib/QtGui.framework/Headers -I/Users/nathanlee/Qt/5.12.6/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -F/Users/nathanlee/Qt/5.12.6/clang_64/lib phonebook.h -o moc_phonebook.cpp
@@ -705,13 +716,24 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 main.o: main.cpp phonebook.h \
 		../../Qt/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		myaddressbookmodel.h \
+		../../Qt/5.12.6/clang_64/lib/QtCore.framework/Headers/QAbstractTableModel \
+		../../Qt/5.12.6/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h \
 		../../Qt/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
+myaddressbookmodel.o: myaddressbookmodel.cpp myaddressbookmodel.h \
+		../../Qt/5.12.6/clang_64/lib/QtCore.framework/Headers/QAbstractTableModel \
+		../../Qt/5.12.6/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o myaddressbookmodel.o myaddressbookmodel.cpp
+
 phonebook.o: phonebook.cpp phonebook.h \
 		../../Qt/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		myaddressbookmodel.h \
+		../../Qt/5.12.6/clang_64/lib/QtCore.framework/Headers/QAbstractTableModel \
+		../../Qt/5.12.6/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h \
 		ui_phonebook.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o phonebook.o phonebook.cpp
 

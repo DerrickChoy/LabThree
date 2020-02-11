@@ -2,6 +2,7 @@
 #define PHONEBOOK_H
 
 #include <QMainWindow>
+#include "myaddressbookmodel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Phonebook; }
@@ -17,7 +18,12 @@ public:
 
 private slots:
 
+    void on_actionAdd_an_Address_Book_triggered();
+
+    void on_tableView_clicked(const QModelIndex &index);
+
 private:
     Ui::Phonebook *ui;
+    MyAddressBookModel *myModel;
 };
 #endif // PHONEBOOK_H
