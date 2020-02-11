@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
+#include <iostream>
 
 MyAddressBookModel::MyAddressBookModel(QObject *parent):
     QAbstractTableModel(parent)
@@ -12,7 +13,7 @@ MyAddressBookModel::MyAddressBookModel(QObject *parent):
 
 int MyAddressBookModel::rowCount(const QModelIndex &parent) const
 {
-    return filteredIndex.size(); //update later
+    return filteredIndex.size();
 }
 
 int MyAddressBookModel::columnCount(const QModelIndex &parent) const
@@ -68,7 +69,7 @@ QString MyAddressBookModel::getPhoneNumber(int index)
 void MyAddressBookModel::setFilerString(QString fStr)
 {
     filteredIndex.clear();
-    for(int i=0;i<phoneNumbers.size();i++){
+    for(int i=0;i< static_cast<int>(phoneNumbers.size());i++){
         if(phoneNumbers[i].startsWith(fStr))
             filteredIndex.push_back(i);
     }
