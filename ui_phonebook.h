@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -58,12 +59,8 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QLabel *label_9;
-<<<<<<< HEAD
-=======
-    QLabel *dialerDisplay;
     QWidget *formLayoutWidget;
     QFormLayout *formLayout;
->>>>>>> 96cca35127392ab27ee13c47c0c1fbed6ae0da96
     QPushButton *deletePushButton;
     QMenuBar *menubar;
     QMenu *menuTools;
@@ -84,7 +81,8 @@ public:
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setGeometry(QRect(410, 20, 361, 511));
-        tableView->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 170, 255);"));
+        tableView->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 170, 255);\n"
+"color: rgb(255, 255, 255);"));
         tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         tableView->horizontalHeader()->setVisible(false);
@@ -277,18 +275,12 @@ public:
         label_9->setFont(font2);
         label_9->setStyleSheet(QString::fromUtf8("color: rgb(176, 176, 176);"));
         label_9->setAlignment(Qt::AlignCenter);
-<<<<<<< HEAD
-=======
-        dialerDisplay = new QLabel(centralwidget);
-        dialerDisplay->setObjectName(QString::fromUtf8("dialerDisplay"));
-        dialerDisplay->setGeometry(QRect(250, 40, 111, 16));
         formLayoutWidget = new QWidget(centralwidget);
         formLayoutWidget->setObjectName(QString::fromUtf8("formLayoutWidget"));
         formLayoutWidget->setGeometry(QRect(260, 210, 160, 80));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
->>>>>>> 96cca35127392ab27ee13c47c0c1fbed6ae0da96
         deletePushButton = new QPushButton(centralwidget);
         deletePushButton->setObjectName(QString::fromUtf8("deletePushButton"));
         deletePushButton->setGeometry(QRect(200, 490, 121, 41));
@@ -300,12 +292,9 @@ public:
 "color: rgb(255, 255, 255);"));
         deletePushButton->setFlat(false);
         Phonebook->setCentralWidget(centralwidget);
-<<<<<<< HEAD
+        formLayoutWidget->raise();
         line_3->raise();
         line->raise();
-=======
-        dialerDisplay->raise();
->>>>>>> 96cca35127392ab27ee13c47c0c1fbed6ae0da96
         line_2->raise();
         dialerDisplayBox->raise();
         tableView->raise();
@@ -334,7 +323,7 @@ public:
         deletePushButton->raise();
         menubar = new QMenuBar(Phonebook);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 800, 21));
         menuTools = new QMenu(menubar);
         menuTools->setObjectName(QString::fromUtf8("menuTools"));
         Phonebook->setMenuBar(menubar);
@@ -386,10 +375,6 @@ public:
         label_7->setText(QApplication::translate("Phonebook", "TUV", nullptr));
         label_8->setText(QApplication::translate("Phonebook", "WXYZ", nullptr));
         label_9->setText(QApplication::translate("Phonebook", "+", nullptr));
-<<<<<<< HEAD
-=======
-        dialerDisplay->setText(QApplication::translate("Phonebook", "TextLabel", nullptr));
->>>>>>> 96cca35127392ab27ee13c47c0c1fbed6ae0da96
         deletePushButton->setText(QApplication::translate("Phonebook", "DELETE", nullptr));
         menuTools->setTitle(QApplication::translate("Phonebook", "Tools", nullptr));
     } // retranslateUi
