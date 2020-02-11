@@ -7,7 +7,7 @@
 MyAddressBookModel::MyAddressBookModel(QObject *parent):
     QAbstractTableModel(parent)
 {
-
+    numberInput.resize(0);
 }
 
 int MyAddressBookModel::rowCount(const QModelIndex &parent) const
@@ -46,7 +46,7 @@ void MyAddressBookModel::openFile(QString filePath)
     lastNames.clear();
     firstNames.clear();
     phoneNumbers.clear();
-
+    int j = 0;
     for(int i = 0; !in.atEnd(); i++){
         QString line = in.readLine();
         QStringList fields = line.split(",");
@@ -54,7 +54,7 @@ void MyAddressBookModel::openFile(QString filePath)
         firstNames.push_back(fields[0]);
         lastNames.push_back(fields[1]);
         phoneNumbers.push_back(fields[7]);
-        filteredIndex.push_back(i);
+        filteredIndex.push_back(j++);
     }
     file.close();
     emit layoutChanged();
@@ -78,16 +78,17 @@ void MyAddressBookModel::setFilerString(QString fStr)
 void MyAddressBookModel::setNumberInput(QString input)
 {
     numberInput += input;
-
-    /*need to finish adding - to filter
-     * if(numberInput.size()<=2)
-        numberInput.insert(2,"-");*/
+    if (numberInput.size()>=3&&numberInput[3]!="-")
+        numberInput.insert(3,"-");
+    if (numberInput.size()>=7&&numberInput[7]!="-")
+        numberInput.insert(7,"-");
     setFilerString(numberInput);
 }
 
 void MyAddressBookModel::deleteNumber()
 {
     numberInput.chop(1);
+    setFilerString(numberInput);
 }
 
 QString MyAddressBookModel::getDialerNumber()
