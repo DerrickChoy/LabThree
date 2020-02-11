@@ -78,9 +78,9 @@ void MyAddressBookModel::setFilerString(QString fStr)
 void MyAddressBookModel::setNumberInput(QString input)
 {
     numberInput += input;
-    if (numberInput.size()>=3&&numberInput[3]!="-")
+    if (numberInput.size()>3&&numberInput[3]!="-")
         numberInput.insert(3,"-");
-    if (numberInput.size()>=7&&numberInput[7]!="-")
+    if (numberInput.size()>7&&numberInput[7]!="-")
         numberInput.insert(7,"-");
     setFilerString(numberInput);
 }
