@@ -588,6 +588,7 @@ release/phonebook.o: phonebook.cpp phonebook.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QAbstractTableModel \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qabstractitemmodel.h \
 		ui_phonebook.h \
+<<<<<<< HEAD
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QAction \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qaction.h \
@@ -642,6 +643,64 @@ release/phonebook.o: phonebook.cpp phonebook.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qdir.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qfileinfo.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdialog.h
+=======
+		C:/Qt/5.12.6/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QAction \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qaction.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QFormLayout \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qformlayout.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QLayout \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QFrame \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtGui/qvalidator.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtCore/qregularexpression.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qslider.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qstyle.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QMenu \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qmenu.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QMenuBar \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qmenubar.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QStackedWidget \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qstackedwidget.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QStatusBar \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qstatusbar.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QTableView \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qtableview.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QFileDialog \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qfiledialog.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtCore/qdir.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtCore/qfileinfo.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qdialog.h
+>>>>>>> ef6bff3c563df93f3ed606d1ef2b2755d4c60191
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\phonebook.o phonebook.cpp
 
 release/moc_phonebook.o: release/moc_phonebook.cpp 

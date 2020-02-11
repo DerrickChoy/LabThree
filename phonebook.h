@@ -45,6 +45,8 @@ private slots:
 
     void on_deletePushButton_clicked();
 
+    void on_btnCall_clicked();
+
 private:
     Ui::Phonebook *ui;
     MyAddressBookModel *myModel;
