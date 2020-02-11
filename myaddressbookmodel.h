@@ -24,7 +24,9 @@ private:
     std::vector<QString> firstNames;
     std::vector<QString> lastNames;
     std::vector<QString> phoneNumbers;
+    std::vector<QString> fullNames;
     std::vector<int> filteredIndex;
+    std::vector<QString> filteredByName;
     QString numberInput;
 };
 

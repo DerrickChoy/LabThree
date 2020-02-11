@@ -54,8 +54,36 @@ void MyAddressBookModel::openFile(QString filePath)
         if(i == 0) continue;
         firstNames.push_back(fields[0]);
         lastNames.push_back(fields[1]);
+        fullNames.push_back((fields[0]+fields[1]).toLower());
         phoneNumbers.push_back(fields[7]);
         filteredIndex.push_back(j++);
+    }
+    filteredByName.clear();
+    QString filterNumberByName;
+    for (int i=0;i<static_cast<int>(fullNames.size());i++){
+        filterNumberByName.resize(0);
+        QString copyWord=fullNames[i];
+        for (int j=0;j<static_cast<int>(copyWord.size());j++){
+            if (copyWord[j]=="a"||copyWord[j]=="c"||copyWord[j]=="c")
+                filterNumberByName += "2";
+            else if (copyWord[j]=="d"||copyWord[j]=="e"||copyWord[j]=="f")
+                filterNumberByName += "3";
+            else if (copyWord[j]=="g"||copyWord[j]=="h"||copyWord[j]=="i")
+                filterNumberByName += "4";
+            else if (copyWord[j]=="j"||copyWord[j]=="k"||copyWord[j]=="l")
+                filterNumberByName += "5";
+            else if (copyWord[j]=="m"||copyWord[j]=="n"||copyWord[j]=="o")
+                filterNumberByName += "6";
+            else if (copyWord[j]=="p"||copyWord[j]=="q"||copyWord[j]=="r"||copyWord[j]=="s")
+                filterNumberByName += "7";
+            else if (copyWord[j]=="t"||copyWord[j]=="u"||copyWord[j]=="v")
+                filterNumberByName += "8";
+            else if (copyWord[j]=="w"||copyWord[j]=="x"||copyWord[j]=="y"||copyWord[j]=="z")
+                filterNumberByName += "9";
+            if (j==2||j==5)
+                filterNumberByName += "-";
+        }
+        filteredByName.push_back(filterNumberByName);
     }
     file.close();
     emit layoutChanged();
@@ -73,6 +101,9 @@ void MyAddressBookModel::setFilerString(QString fStr)
         if(phoneNumbers[i].startsWith(fStr))
             filteredIndex.push_back(i);
     }
+    for(int i=0;i<static_cast<int>(phoneNumbers.size());i++)
+        if (filteredByName[i].startsWith(fStr))
+            filteredIndex.push_back(i);
     emit layoutChanged();
 }
 
