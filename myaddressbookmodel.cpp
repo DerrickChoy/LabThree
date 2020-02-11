@@ -12,7 +12,7 @@ MyAddressBookModel::MyAddressBookModel(QObject *parent):
 
 int MyAddressBookModel::rowCount(const QModelIndex &parent) const
 {
-    return firstNames.size(); //update later
+    return filteredIndex.size(); //update later
 }
 
 int MyAddressBookModel::columnCount(const QModelIndex &parent) const
@@ -25,11 +25,11 @@ QVariant MyAddressBookModel::data(const QModelIndex &index, int role) const
     if(role == Qt::DisplayRole){
         switch (index.column()) {
         case 0:
-            return firstNames.at(index.row());
+            return firstNames.at(filteredIndex[index.row()]);
         case 1:
-            return lastNames.at(index.row());
+            return lastNames.at(filteredIndex[index.row()]);
         case 2:
-            return phoneNumbers.at(index.row());
+            return phoneNumbers.at(filteredIndex[index.row()]);
         }
     }
     return QVariant();
@@ -54,6 +54,7 @@ void MyAddressBookModel::openFile(QString filePath)
         firstNames.push_back(fields[0]);
         lastNames.push_back(fields[1]);
         phoneNumbers.push_back(fields[7]);
+        filteredIndex.push_back(i);
     }
     file.close();
     emit layoutChanged();
@@ -61,5 +62,36 @@ void MyAddressBookModel::openFile(QString filePath)
 
 QString MyAddressBookModel::getPhoneNumber(int index)
 {
-    return phoneNumbers.at(index);
+    return phoneNumbers.at(filteredIndex[index]);
 }
+
+void MyAddressBookModel::setFilerString(QString fStr)
+{
+    filteredIndex.clear();
+    for(int i=0;i<phoneNumbers.size();i++){
+        if(phoneNumbers[i].startsWith(fStr))
+            filteredIndex.push_back(i);
+    }
+    emit layoutChanged();
+}
+
+void MyAddressBookModel::setNumberInput(QString input)
+{
+    numberInput += input;
+
+    /*need to finish adding - to filter
+     * if(numberInput.size()<=2)
+        numberInput.insert(2,"-");*/
+    setFilerString(numberInput);
+}
+
+void MyAddressBookModel::deleteNumber()
+{
+    numberInput.chop(1);
+}
+
+QString MyAddressBookModel::getDialerNumber()
+{
+    return numberInput;
+}
+

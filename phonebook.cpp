@@ -31,3 +31,69 @@ void Phonebook::on_tableView_clicked(const QModelIndex &index)
 {
     ui->displayLabel->setText(myModel->getPhoneNumber(index.row()));
 }
+
+
+void Phonebook::on_onePushButton_clicked()
+{
+    myModel->setNumberInput("1");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_twoPushButton_clicked()
+{
+    myModel->setNumberInput("2");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_threePushButton_clicked()
+{
+    myModel->setNumberInput("3");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_fourPushButton_clicked()
+{
+    myModel->setNumberInput("4");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_fivePushButton_clicked()
+{
+    myModel->setNumberInput("5");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_sixPushButton_clicked()
+{
+    myModel->setNumberInput("6");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+void Phonebook::on_sevenPushButton_clicked()
+{
+    myModel->setNumberInput("7");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_eightPushButton_clicked()
+{
+    myModel->setNumberInput("8");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_ninePushButton_clicked()
+{
+    myModel->setNumberInput("9");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_zeroPushButton_clicked()
+{
+    myModel->setNumberInput("0");
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_deleteButton_clicked()
+{
+    myModel->deleteNumber();
+    ui->dialerDisplay->setText(myModel->getDialerNumber());
+}
