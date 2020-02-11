@@ -20,7 +20,7 @@
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>410</x>
       <y>20</y>
       <width>361</width>
       <height>511</height>
@@ -45,10 +45,10 @@
    <widget class="QLabel" name="dialerDisplayBox">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>60</y>
+      <x>40</x>
+      <y>90</y>
       <width>311</width>
-      <height>101</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -71,9 +71,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>160</y>
-      <width>401</width>
-      <height>391</height>
+      <y>0</y>
+      <width>391</width>
+      <height>551</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -92,10 +92,10 @@
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>401</width>
-      <height>391</height>
+      <x>30</x>
+      <y>50</y>
+      <width>340</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -114,9 +114,9 @@
    <widget class="Line" name="line_3">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>390</x>
       <y>0</y>
-      <width>401</width>
+      <width>411</width>
       <height>551</height>
      </rect>
     </property>
@@ -388,10 +388,10 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="btnCall">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>510</y>
-      <width>111</width>
-      <height>31</height>
+      <x>80</x>
+      <y>490</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -707,7 +707,7 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>180</x>
       <y>460</y>
-      <width>47</width>
+      <width>45</width>
       <height>14</height>
      </rect>
     </property>
@@ -729,212 +729,19 @@ color: rgb(255, 255, 255);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="threePushButton">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>90</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>3</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="fourPushButton">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>210</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>4</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="eightPushButton">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>350</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>8</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="sevenPushButton">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>330</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>7</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="ninePushButton">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>330</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>9</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="twoPushButton">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>100</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>2</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="sixPushButton">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>240</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>6</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="fivePushButton">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>220</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>5</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="onePushButton">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>100</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="zeroPushButton">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>450</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="threePushButton_11">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>450</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>3</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="threePushButton_12">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>450</y>
-      <width>91</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>3</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="dialerDisplay">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>40</y>
-      <width>111</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="deleteButton">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>30</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>X</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="formLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>210</y>
-      <width>160</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QFormLayout" name="formLayout"/>
-   </widget>
    <widget class="QPushButton" name="deletePushButton">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>60</y>
-      <width>81</width>
-      <height>81</height>
+      <x>200</x>
+      <y>490</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Lato</family>
-      <pointsize>30</pointsize>
+      <pointsize>20</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -948,24 +755,10 @@ color: rgb(255, 255, 255);</string>
      <bool>false</bool>
     </property>
    </widget>
-   <zorder>threePushButton</zorder>
-   <zorder>fourPushButton</zorder>
-   <zorder>eightPushButton</zorder>
-   <zorder>sevenPushButton</zorder>
-   <zorder>ninePushButton</zorder>
-   <zorder>twoPushButton</zorder>
-   <zorder>sixPushButton</zorder>
-   <zorder>fivePushButton</zorder>
-   <zorder>onePushButton</zorder>
-   <zorder>zeroPushButton</zorder>
-   <zorder>threePushButton_11</zorder>
-   <zorder>threePushButton_12</zorder>
-   <zorder>dialerDisplay</zorder>
-   <zorder>deleteButton</zorder>
+   <zorder>line_3</zorder>
+   <zorder>line</zorder>
    <zorder>line_2</zorder>
    <zorder>dialerDisplayBox</zorder>
-   <zorder>line</zorder>
-   <zorder>line_3</zorder>
    <zorder>tableView</zorder>
    <zorder>btnNum1</zorder>
    <zorder>btnNum2</zorder>
@@ -989,7 +782,6 @@ color: rgb(255, 255, 255);</string>
    <zorder>label_7</zorder>
    <zorder>label_8</zorder>
    <zorder>label_9</zorder>
-   <zorder>formLayoutWidget</zorder>
    <zorder>deletePushButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -998,7 +790,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuTools">
