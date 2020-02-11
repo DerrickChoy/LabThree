@@ -1,8 +1,9 @@
 #include "phonebook.h"
 #include "ui_phonebook.h"
-
+#include "myaddressbookmodel.h"
 #include <QFileDialog>
 #include <iostream>
+#include <QMessageBox>
 
 Phonebook::Phonebook(QWidget *parent):
     QMainWindow(parent),
@@ -95,5 +96,17 @@ void Phonebook::on_btnNum0_clicked()
 void Phonebook::on_deletePushButton_clicked()
 {
     myModel->deleteNumber();
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
+}
+
+void Phonebook::on_btnCall_clicked()
+{
+    QMessageBox payMessage;
+    QString payText = "Calling " + myModel->getDialerNumber();
+    payMessage.setText(payText);
+    payMessage.exec();
+    while (myModel->getDialerNumber() > 0) {
+        myModel->deleteNumber();
+    }
     ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
