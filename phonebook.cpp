@@ -29,71 +29,71 @@ void Phonebook::on_actionAdd_an_Address_Book_triggered()
 
 void Phonebook::on_tableView_clicked(const QModelIndex &index)
 {
-    ui->displayLabel->setText(myModel->getPhoneNumber(index.row()));
+    ui->dialerDisplayBox->setText(myModel->getPhoneNumber(index.row()));
 }
 
-
-void Phonebook::on_onePushButton_clicked()
+void Phonebook::on_btnNum1_clicked()
 {
     myModel->setNumberInput("1");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
 
-void Phonebook::on_twoPushButton_clicked()
+void Phonebook::on_btnNum2_clicked()
 {
     myModel->setNumberInput("2");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
 
-void Phonebook::on_threePushButton_clicked()
+void Phonebook::on_btnNum3_clicked()
 {
     myModel->setNumberInput("3");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
 
-void Phonebook::on_fourPushButton_clicked()
+void Phonebook::on_btnNum4_clicked()
 {
     myModel->setNumberInput("4");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
 
-void Phonebook::on_fivePushButton_clicked()
+void Phonebook::on_btnNum5_clicked()
 {
     myModel->setNumberInput("5");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
 
-void Phonebook::on_sixPushButton_clicked()
+void Phonebook::on_btnNum6_clicked()
 {
     myModel->setNumberInput("6");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
-void Phonebook::on_sevenPushButton_clicked()
+
+void Phonebook::on_btnNum7_clicked()
 {
     myModel->setNumberInput("7");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
 
-void Phonebook::on_eightPushButton_clicked()
+void Phonebook::on_btnNum8_clicked()
 {
     myModel->setNumberInput("8");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
 
-void Phonebook::on_ninePushButton_clicked()
+void Phonebook::on_btnNum9_clicked()
 {
     myModel->setNumberInput("9");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
 
-void Phonebook::on_zeroPushButton_clicked()
+void Phonebook::on_btnNum0_clicked()
 {
     myModel->setNumberInput("0");
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }
 
-void Phonebook::on_deleteButton_clicked()
+void Phonebook::on_deletePushButton_clicked()
 {
     myModel->deleteNumber();
-    ui->dialerDisplay->setText(myModel->getDialerNumber());
+    ui->dialerDisplayBox->setText(myModel->getDialerNumber());
 }

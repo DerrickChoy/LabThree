@@ -22,27 +22,28 @@ private slots:
 
     void on_tableView_clicked(const QModelIndex &index);
 
-    void on_threePushButton_clicked();
 
-    void on_onePushButton_clicked();
+    void on_btnNum1_clicked();
 
-    void on_twoPushButton_clicked();
+    void on_btnNum2_clicked();
 
-    void on_fourPushButton_clicked();
+    void on_btnNum3_clicked();
 
-    void on_fivePushButton_clicked();
+    void on_btnNum4_clicked();
 
-    void on_sixPushButton_clicked();
+    void on_btnNum5_clicked();
 
-    void on_sevenPushButton_clicked();
+    void on_btnNum6_clicked();
 
-    void on_eightPushButton_clicked();
+    void on_btnNum7_clicked();
 
-    void on_ninePushButton_clicked();
+    void on_btnNum8_clicked();
 
-    void on_zeroPushButton_clicked();
+    void on_btnNum9_clicked();
 
-    void on_deleteButton_clicked();
+    void on_btnNum0_clicked();
+
+    void on_deletePushButton_clicked();
 
 private:
     Ui::Phonebook *ui;
